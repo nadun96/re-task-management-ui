@@ -1,7 +1,8 @@
 import React from 'react'
-import { authenticated, role } from '../../auth/Auth'
+import Auth from '../../auth/Auth'
 import LeaderDashboard from './LeaderDashboard'
 import MemberDashboard from './MemberDashboard'
+
 
 function Dashboard() {
   return (
@@ -10,7 +11,7 @@ function Dashboard() {
         <div>
             <div>
                 {
-                    (authenticated && role === 'admin')?
+                    (Auth.authenticated && Auth.role === 'admin')?
                     <LeaderDashboard /> : <MemberDashboard />
                 }
             </div>

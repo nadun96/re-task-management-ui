@@ -1,14 +1,11 @@
 import './App.css';
 import Auth from './auth/Auth';
-import UserList from './components/user/UserList';
-import Signin from './pages/Signin';
-import Signup from './pages/Signup';
+import Signin from './pages/Welcome/Main/Signin';
+import Signup from './pages/Welcome/Main/Signup';
 import { useState } from 'react';
-import LeaderDashboard from './pages/LeaderDashboard';
-import MemberDashboard from './pages/MemberDashboard';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 function App() {
-
 
   const [authenticated, isAuthenticated] = useState(true);
   const [role, setRole] = useState('admin');
@@ -21,6 +18,9 @@ function App() {
 
       {(authenticated) ? <Signup />:<Signin />}
 
+      </div>
+      <div>
+        <Dashboard />
       </div>
       
     </div>
